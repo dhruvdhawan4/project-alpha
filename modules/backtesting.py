@@ -1,4 +1,18 @@
 # modules/backtesting.py
+import sys
+import os
+
+# This allows the module to reach the root 'config' folder
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from config.settings import DATA_CACHE_DIR
+
+# --- Keep your existing backtesting code below this line ---
+# Example:
+class BacktestEngine:
+    def __init__(self):
+        self.data_dir = DATA_CACHE_DIR
+    # ... rest of your code
 import pandas as pd
 
 class HistoricalBacktestEngine:
