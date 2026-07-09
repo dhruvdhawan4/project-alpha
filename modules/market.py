@@ -2,6 +2,21 @@
 import sys
 import os
 
+# This allows the market module to reach the root 'config' folder
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from config.settings import DATA_CACHE_DIR
+
+# --- Keep your existing market code below this line ---
+# Example:
+import yfinance as yf
+class MarketDataEngine:
+    def __init__(self):
+        self.cache_dir = DATA_CACHE_DIR
+    # ... rest of your code
+import sys
+import os
+
 # This block ensures Python can find the 'config' folder in the root directory
 # even when the code is running from inside the 'modules' folder.
 current_dir = os.path.dirname(os.path.abspath(__file__))
