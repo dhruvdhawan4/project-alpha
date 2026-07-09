@@ -1,4 +1,18 @@
 # modules/fundamental.py
+import sys
+import os
+
+# This allows the fundamental module to reach the root 'config' folder
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from config.settings import DATA_CACHE_DIR
+
+# --- Keep your existing fundamental code below this line ---
+# Example:
+class FundamentalEngine:
+    def __init__(self):
+        self.data_dir = DATA_CACHE_DIR
+    # ... rest of your code
 import yfinance as yf
 import numpy as np
 
