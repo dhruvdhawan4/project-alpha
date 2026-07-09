@@ -1,4 +1,11 @@
 # modules/analytics.py
+import sys
+import os
+
+# This tells Python to look in the root folder for the 'config' package
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from config.settings import DATA_CACHE_DIR
 import numpy as np
 import pandas as pd
 
